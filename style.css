@@ -7,11 +7,11 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #88ABFF;
+  background: #ebbf62;
 }
 ::selection{
-  color: #fff;
-  background: #618cf8;
+  color: #cdff44;
+  background: #f3f18a;
 }
 .wrapper{
   margin: 50px;
@@ -24,7 +24,7 @@ body{
   list-style: none;
   border-radius: 5px;
   padding: 15px 20px 20px;
-  background: #fff;
+  background: #fbffd7da;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 .add-box, .icon, .bottom-content, 
@@ -41,14 +41,14 @@ body{
 .add-box .icon{
   height: 78px;
   width: 78px;
-  color: #88ABFF;
+  color: #000000ce;
   font-size: 40px;
   border-radius: 50%;
   justify-content: center;
-  border: 2px dashed #88ABFF;
+  border: 2px dashed #000000;
 }
 .add-box p{
-  color: #88ABFF;
+  color: #000000;
   font-weight: 500;
   margin-top: 20px;
 }
