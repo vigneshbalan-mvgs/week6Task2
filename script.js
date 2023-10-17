@@ -6,26 +6,26 @@ titleTag = popupBox.querySelector("input"),
 descTag = popupBox.querySelector("textarea"),
 addBtn = popupBox.querySelector("button");
 
-const months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+const months = [" January"," February"," March"," April"," May"," June"," July", " August", " September", " October", " November", " December"];
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false, updateId;
+//Click eventlisterner for the things 
 
 addBox.addEventListener("click", () => {
-    popupTitle.innerText = "Add a new Note";
+    popupTitle.innerText = "Add A New Note";
     addBtn.innerText = "Add Note";
     popupBox.classList.add("show");
     document.querySelector("body").style.overflow = "hidden";
     if(window.innerWidth > 660) titleTag.focus();
 });
-
+//Close icon for the popup 
 closeIcon.addEventListener("click", () => {
     isUpdate = false;
     titleTag.value = descTag.value = "";
     popupBox.classList.remove("show");
     document.querySelector("body").style.overflow = "auto";
 });
-
+//div that everytime show up after the popups
 function showNotes() {
     if(!notes) return;
     document.querySelectorAll(".note").forEach(li => li.remove());
@@ -50,8 +50,10 @@ function showNotes() {
         addBox.insertAdjacentHTML("afterend", liTag);
     });
 }
-showNotes();
+showNotes();//after the input showing items
 
+
+//show menu
 function showMenu(elem) {
     elem.parentElement.classList.add("show");
     document.addEventListener("click", e => {
@@ -60,7 +62,7 @@ function showMenu(elem) {
         }
     });
 }
-
+//deleting notes
 function deleteNote(noteId) {
     let confirmDel = confirm("Are you sure you want to delete this note?");
     if(!confirmDel) return;
@@ -68,7 +70,7 @@ function deleteNote(noteId) {
     localStorage.setItem("notes", JSON.stringify(notes));
     showNotes();
 }
-
+//update notes with older notes using the icon of the edit 
 function updateNote(noteId, title, filterDesc) {
     let description = filterDesc.replaceAll('<br/>', '\r\n');
     updateId = noteId;
