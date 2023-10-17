@@ -81,7 +81,7 @@ function updateNote(noteId, title, filterDesc) {
     popupTitle.innerText = "Update a Note";
     addBtn.innerText = "Update Note";
 }
-
+//click event and current date 
 addBtn.addEventListener("click", e => {
     e.preventDefault();
     let title = titleTag.value.trim(),
